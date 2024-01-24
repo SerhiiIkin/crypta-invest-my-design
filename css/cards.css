@@ -1,0 +1,46 @@
+.cards {
+    padding-bottom: clamp(20px, calc(10px + 2.2%), 40px);
+}
+
+.cards__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 500px));
+    justify-content: center;
+    gap: 1rem;
+}
+
+.card {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 0.5rem;
+    color: white;
+    padding-bottom: 3rem;
+    & p {
+        grid-column: 1/-1;
+        font-size: 15px;
+    }
+
+    & svg {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        fill: white;
+    }
+}
+
+.card--wallet {
+    background: linear-gradient(180deg, #0de656 0%, #07732b 100%);
+}
+
+.card--valuta {
+    background: linear-gradient(180deg, #1531bb 0%, #0b195e 100%);
+}
+
+.card--crypto {
+    background: linear-gradient(180deg, #de3e93 0%, #6f1f4a 100%);
+}
+
+.card--kurser {
+    background: linear-gradient(180deg, #c4ef4c 0%, #627826 100%);
+}

@@ -1,0 +1,60 @@
+.footer {
+    color: white;
+    background: linear-gradient(
+        180deg,
+        #03c564f5 0%,
+        #03c363f5 47%,
+        #026432 92%,
+        #026332 100%
+    );
+}
+
+.footer__container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 10px;
+}
+
+.footer__icons {
+    grid-column-start: 2;
+    display: flex;
+    gap: 10px;
+    justify-self: end;
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+        grid-column-start: 1;
+        justify-self: start;
+    }
+
+    & svg {
+        width: 25px;
+    }
+}
+.footer__info {
+    grid-column: 1/-1;
+    justify-self: center;
+
+    & a:hover {
+        color: blue;
+        transition: color 0.5s ease 0s;
+    }
+
+    @media (min-width: 768px) {
+        grid-column-start: 2;
+        justify-self: end;
+        grid-row: 1/-1;
+    }
+}
+
+.footer__instagram {
+    fill: conic-gradient(
+        from 90deg at 50% 50%,
+        #2342a7 0%,
+        #a32137 0%,
+        #1541d6 100%,
+        #020949 100%
+    );
+}

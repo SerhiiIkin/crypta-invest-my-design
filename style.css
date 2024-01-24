@@ -1,0 +1,15 @@
+@import "./css/reset.css";
+@import "./css/variables.css";
+@import "./css/header.css";
+@import "./css/slider.css";
+@import "./css/cards.css";
+@import "./css/form.css";
+@import "./css/footer.css";
+
+.main {
+    padding-top: clamp(30px, calc(20px + 2.2%), 50px);
+}
+
+.logo {
+    max-width: clamp(160px, calc(100px + 15%), 320px);
+}

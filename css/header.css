@@ -1,0 +1,130 @@
+.header {
+    padding-top: 20px;
+    padding-bottom: clamp(30px, calc(20px + 2.2%), 50px);
+    background: #1054ac;
+}
+
+.header__container {
+    position: relative;
+}
+
+.header__logo {
+    padding-bottom: 30px;
+}
+
+.header__title {
+    text-align: center;
+    color: #ec6969;
+    font-size: clamp(20px, calc(15px + 0.7vw), 26px);
+    font-family: Lucida Handwriting;
+}
+
+.header__menu {
+    display: none;
+    @media (min-width: 480px) {
+        position: absolute;
+        top: 35px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        color: white;
+    }
+
+    @media (min-width: 1281px) {
+        & a {
+            position: relative;
+        }
+
+        & a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #fff;
+            transition: all 1s ease 0s;
+        }
+
+        & a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+
+.header__menu.active {
+    background: black;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding-top: 110px;
+    width: 100%;
+    height: 100%;
+    color: white;
+    flex-direction: column;
+    gap: 27px;
+    font-size: 20px;
+    max-width: 100%;
+    z-index: 9;
+    align-items: center;
+    @media (min-width: 480px) {
+        display: none;
+    }
+}
+
+.header__burger {
+    @media (min-width: 480px) {
+        display: none;
+    }
+    position: fixed;
+    display: block;
+    width: 18px;
+    height: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid;
+    border-right: none;
+    border-left: none;
+    color: var(--green);
+    font-size: 0;
+    top: 20px;
+    right: 35px;
+    z-index: 10;
+}
+
+.header__burger::after,
+.header__burger::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: var(--green);
+    translate: -50% -50%;
+    transition: rotate 0.5s ease 0s;
+}
+
+.header__burger.active {
+    color: transparent;
+    width: 18px;
+}
+
+.header__burger.active::before,
+.header__burger.active::after {
+    background: white;
+}
+
+.header__burger.active::before {
+    rotate: 45deg;
+    translate: -5px -2px;
+}
+
+.header__burger.active::after {
+    rotate: -45deg;
+    translate: -5px -3px;
+}

@@ -1,0 +1,49 @@
+.form {
+    margin-bottom: clamp(30px, calc(20px + 2.2%), 50px);
+    background-color: #1f30cb;
+    padding: 16px 8px;
+    color: white;
+    & input,
+    textarea {
+        border-radius: 20px;
+        padding: 4px 10px;
+        color: black;
+    }
+
+    & button {
+        padding: 5px 0;
+        border-radius: 20px;
+    }
+}
+
+.form__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    row-gap: 20px;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.form__title {
+    text-align: center;
+    font-size: clamp(22px, calc(15px + 0.7vw), 25px);
+    padding-bottom: 20px;
+}
+
+.form__email {
+    grid-column-start: 2;
+}
+
+.form__question {
+    grid-column: 1/-1;
+}
+
+.form__reset {
+    background-color: #d10d0d;
+}
+
+.form__send {
+    grid-column-start: 2;
+
+    background-color: #0cbc4d;
+}
