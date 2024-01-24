@@ -4,6 +4,7 @@
 
 .slider__wrapper {
     & img {
+        height: 80vh;
         aspect-ratio: 16/7;
     }
 }
