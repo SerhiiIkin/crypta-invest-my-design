@@ -5,6 +5,7 @@
 @import "./css/cards.css";
 @import "./css/form.css";
 @import "./css/footer.css";
+@import "./css/my-slider.css";
 
 .main {
     padding-top: clamp(30px, calc(20px + 2.2%), 50px);
