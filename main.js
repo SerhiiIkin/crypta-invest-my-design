@@ -1,6 +1,7 @@
 import "./js/BurgerMenu.js";
 import "./js/Form.js"
 import Slider from "./js/Slider.js"
+import "./js/Observer.js"
 
 
 const config = {

@@ -150,7 +150,7 @@
 .slider-btn__left,
 .slider-btn__right {
     position: absolute;
-    z-index: 20;
+    z-index: 10;
     cursor: pointer;
     top: 50%;
     translate: 0 -50%;
@@ -179,7 +179,7 @@
 
 .pagination {
     position: absolute;
-    z-index: 20;
+    z-index: 10;
     bottom: 0;
     left: 50%;
     translate: -50% 0;

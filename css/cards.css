@@ -16,6 +16,28 @@
     gap: 0.5rem;
     color: white;
     padding-bottom: 3rem;
+    opacity: 0;
+    transform: translateX(15px);
+    transition: 2s;
+
+    @media (min-width: 768px) {
+        transform: translateX(100px);
+    }
+
+    @media (min-width: 1281px) {
+        &:nth-of-type(even) {
+            transition: 3s;
+        }
+        &:nth-of-type(odd) {
+            transition: 2s;
+        }
+    }
+
+    &.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
     & p {
         grid-column: 1/-1;
         font-size: 15px;

@@ -3,6 +3,15 @@
     background-color: #1f30cb;
     padding: 16px 8px;
     color: white;
+    translate: 0 50px;
+    transition: 2s;
+    opacity: 0;
+
+    &.show {
+        translate: 0;
+        opacity: 1;
+    }
+
     & input,
     textarea {
         border-radius: 20px;
@@ -39,11 +48,25 @@
 }
 
 .form__reset {
-    background-color: #d10d0d;
+    background-color: #870909;
+    @media (min-width: 1200px) {
+        &:hover {
+            background-color: #cd1717;
+            color: rgb(0, 0, 0);
+            transition: color 0.5s ease 0s;
+        }
+    }
 }
 
 .form__send {
     grid-column-start: 2;
+    background-color: #209149;
 
-    background-color: #0cbc4d;
+    @media (min-width: 1200px) {
+        &:hover {
+            background-color: #0cbc4d;
+            color: rgb(36, 134, 194);
+            transition: color 0.5s ease 0s;
+        }
+    }
 }
