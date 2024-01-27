@@ -21,13 +21,13 @@
                 </h1>
 
                 <button class="header__burger"></button>
+                <nav class="header__menu">
+                    <a href="#header">Hjem</a>
+                    <a href="#wallet">Din Wallet</a>
+                    <a href="#faq">Faq</a>
+                    <a href="#footer">Kontakt</a>
+                </nav>
             </div>
-            <nav class="header__menu">
-                <a href="#header">Hjem</a>
-                <a href="#wallet">Din Wallet</a>
-                <a href="#faq">Faq</a>
-                <a href="#footer">Kontakt</a>
-            </nav>
         </header>
         <main class="main">
             <section id="faq" class="my-slider">
@@ -100,17 +100,24 @@
                 <div class="container">
                     <h2 class="form__title">Spørg din invest expert</h2>
                     <form class="form__wrapper">
-                        <input
-                            type="text"
-                            placeholder="Navn *"
-                            class="form__name"
-                        />
-                        <input
-                            type="text"
-                            class="form__email"
-                            placeholder="Mail *"
-                        />
+                        <label class="form__input-container">
+                            <input
+                                name="name"
+                                type="text"
+                                placeholder="Navn *"
+                                class="form__name"
+                            />
+                        </label>
+                        <label class="form__input-container">
+                            <input
+                                name="email"
+                                type="text"
+                                class="form__email"
+                                placeholder="Mail *"
+                            />
+                        </label>
                         <textarea
+                            name="question"
                             placeholder="Spørgsmål"
                             rows="4"
                             class="form__question"

@@ -1,0 +1,22 @@
+form {
+    .error {
+        color: rgba(239, 10, 10, 0.805);
+        position: absolute;
+        bottom: -15px;
+        left: 10px;
+        font-size: 12px;
+    }
+
+    & input,
+    textarea {
+        &.invalid {
+            outline: 2px solid red;
+            box-shadow: 6px 6px 10px rgb(192, 62, 32),
+                -6px -6px 10px rgb(192, 62, 32);
+        }
+    }
+
+    label {
+        contain: layout;
+    }
+}

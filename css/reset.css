@@ -50,6 +50,8 @@ button:disabled {
     cursor: not-allowed;
 }
 
+
+
 input,
 button {
     font-weight: inherit;

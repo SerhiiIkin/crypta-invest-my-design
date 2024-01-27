@@ -17,18 +17,27 @@
         border-radius: 20px;
         padding: 4px 10px;
         color: black;
+        width: 100%;
     }
 
     & button {
         padding: 5px 0;
         border-radius: 20px;
     }
+
+    .error {
+        color: rgba(239, 10, 10, 0.805);
+        position: absolute;
+        bottom: -15px;
+        left: 10px;
+        font-size: 12px;
+    }
 }
 
 .form__wrapper {
     display: grid;
     grid-template-columns: repeat(2, 45%);
-    row-gap: 20px;
+    row-gap: 25px;
     column-gap: 10px;
     justify-content: center;
 }

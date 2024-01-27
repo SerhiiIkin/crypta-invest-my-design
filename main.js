@@ -1,5 +1,5 @@
 import "./js/BurgerMenu.js";
-import "./js/Form.js"
+import Form from "./js/Form.js"
 import Slider from "./js/Slider.js"
 import "./js/Observer.js"
 
@@ -14,4 +14,9 @@ const config = {
     
 };
 
-Slider (config)
+const configFrom = {
+    selector: ".form"
+}
+
+Slider(config)
+Form(configFrom)
