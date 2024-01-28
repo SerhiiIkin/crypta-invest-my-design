@@ -7,6 +7,22 @@
     transition: 2s;
     opacity: 0;
 
+    & .form__input-container {
+        grid-column: 1/-1;
+        width: 100%;
+    }
+
+    & .form__input-container:nth-of-type(2) {
+        @media (min-width: 550px) {
+            grid-column: 2;
+        }   
+    }
+    & .form__input-container:nth-of-type(1) {
+        @media (min-width: 550px) {
+            grid-column: 1;
+        }   
+    }
+
     &.show {
         translate: 0;
         opacity: 1;
@@ -48,10 +64,6 @@
     padding-bottom: 20px;
 }
 
-.form__email {
-    grid-column-start: 2;
-}
-
 .form__question {
     grid-column: 1/-1;
 }
@@ -68,7 +80,6 @@
 }
 
 .form__send {
-    grid-column-start: 2;
     background-color: #209149;
 
     @media (min-width: 1200px) {
