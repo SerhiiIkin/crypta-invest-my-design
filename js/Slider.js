@@ -1,3 +1,6 @@
+import { sliderData } from "./SliderData.js";
+import SlideTempate from "./SlideTmplate.js";
+
 export default function Slider({
     selector,
     draggable,
@@ -12,6 +15,13 @@ export default function Slider({
     const container = slider.querySelector("div");
     const wrapper = container.querySelector("div");
     const slides = wrapper.children;
+    const slideNummer = container.querySelector(".slideNummer");
+
+    window.addEventListener("keyup", (e) => {
+        clearIntervalSlide();
+        e.key === "ArrowLeft" ? changeSlide("left") : changeSlide("right");
+        checkInterval();
+    });
 
     const startSlides = [...slides];
     const startSlidesLength = slides.length;
@@ -23,6 +33,16 @@ export default function Slider({
     let sInterval;
     const ACTIVE = "active";
     const SHOW = "show";
+
+    changeSlideNummer(currentSlide);
+
+    function changeSlideNummer(currentSlide) {
+        slideNummer.textContent = `${currentSlide + 1} udaf  ${
+            sliderData.length
+        }`;
+    }
+
+    sliderData.forEach((slide) => (wrapper.innerHTML += SlideTempate(slide)));
 
     addClasses();
 
@@ -129,6 +149,7 @@ export default function Slider({
     }
 
     function goToSlide(index) {
+        changeSlideNummer(index)
         clearIntervalSlide();
         const totalSlides = slides.length;
         const stepsForward = (index - currentSlide + totalSlides) % totalSlides;
@@ -313,6 +334,7 @@ export default function Slider({
     }
 
     function changeSlide(direction) {
+
         clearIntervalSlide();
         if (!effect) {
             wrapper.style.transition = "translate 1s ease-in-out";
@@ -333,12 +355,14 @@ export default function Slider({
                     wrapper.removeChild(wrapper.lastElementChild);
                     currentSlide =
                         (currentSlide - 1 + slides.length) % slides.length;
+                    changeSlideNummer(currentSlide)
                 } else {
                     wrapper.appendChild(
                         wrapper.firstElementChild.cloneNode(true)
                     );
                     wrapper.removeChild(wrapper.firstElementChild);
                     currentSlide = (currentSlide + 1) % slides.length;
+                    changeSlideNummer(currentSlide)
                 }
 
                 highlightPagination();
@@ -352,10 +376,12 @@ export default function Slider({
                 wrapper.removeChild(wrapper.lastElementChild);
                 currentSlide =
                     (currentSlide - 1 + slides.length) % slides.length;
+                    changeSlideNummer(currentSlide)
             } else {
                 wrapper.appendChild(wrapper.firstElementChild.cloneNode(true));
                 wrapper.removeChild(wrapper.firstElementChild);
                 currentSlide = (currentSlide + 1) % slides.length;
+                changeSlideNummer(currentSlide)
             }
 
             highlightPagination();
@@ -437,7 +463,6 @@ export default function Slider({
             default:
                 break;
         }
-      
 
         [...slides].forEach((slide, index) => {
             slide.classList.value = `slide ${slide.classList.value}`;
