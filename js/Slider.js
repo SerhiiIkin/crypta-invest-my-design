@@ -294,7 +294,6 @@ export default function Slider({
         clearIntervalSlide();
         isDragging = true;
         startX = e.type.startsWith("touch") ? e.touches[0].clientX : e.clientX;
-
         document.addEventListener("mousemove", drag);
         document.addEventListener("touchmove", drag);
         document.addEventListener("mouseup", stopDrag);
@@ -303,6 +302,7 @@ export default function Slider({
 
     function drag(e) {
         if (!isDragging) return;
+        wrapper.classList.add("draggable")
         const x = e.type.startsWith("touch") ? e.touches[0].clientX : e.clientX;
         deltaX = x - startX;
         wrapper.style.translate = `${deltaX}px`;
@@ -312,6 +312,7 @@ export default function Slider({
         if (!isDragging) return;
 
         isDragging = false;
+        wrapper.classList.remove("draggable")
         const endX = e.type.startsWith("touch")
             ? e.changedTouches[0].clientX
             : e.clientX;

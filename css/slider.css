@@ -64,7 +64,7 @@
         translate: -50% -50%;
         left: 25%;
         opacity: 1;
-        transform: rotateY(180deg) translate3d(0 , 0, 300px) ;
+        transform: rotateY(180deg) translate3d(0, 0, 300px);
 
         &:nth-of-type(1) {
             translate: -100% -50%;
@@ -114,7 +114,7 @@
         cursor: grab;
     }
 
-    &.draggable > .slider__wrapper {
+    &.draggable > .slider__wrapper.draggable {
         pointer-events: none;
     }
 }

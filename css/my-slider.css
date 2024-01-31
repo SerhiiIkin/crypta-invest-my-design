@@ -12,31 +12,32 @@
     color: rgb(188, 43, 43);
     display: flex;
     align-items: center;
-    
+
     width: 120px;
     height: 32px;
-    
-    background-color: rgba(255, 255, 255, .4);
+
+    background-color: rgba(255, 255, 255, 0.4);
     color: black;
-    
+
     padding-left: 32px;
-    
+
     border-radius: 32px 0 32px 0;
-    border-right: 2px solid rgba(255, 255, 255, .4);
-    border-bottom: 2px solid rgba(255, 255, 255, .4);
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-.slider__wrapper {
-    & img {
-        height: 80vh;
-        aspect-ratio: 16/7;
-    }
+.slider__wrapper img {
+    height: 80vh;
+    aspect-ratio: 16/7;
 }
 
 .slide__title {
     text-align: center;
     padding-top: 10px;
     color: white;
+    & a:hover {
+        color: grey;
+    }
 }
 
 .slider__btn-left,
